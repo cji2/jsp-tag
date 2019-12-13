@@ -36,7 +36,17 @@
 			<!-- we can use aStudent.firstName since JSP automatically calls getter! -->
 			<td>${aStudent.getFirstName()}</td>
 			<td>${aStudent.getLastName()}</td>
-			<td>${aStudent.isScholarship()}</td>
+			<td> 
+				<!--  we may use aStudent.scholarship, rather than isScholarship(),
+				since the getter method will automatically be called by JSP. -->
+				<c:if test="${aStudent.isScholarship()}" >
+					Special Opportunity!
+				</c:if>
+				<!--  if-tag doesn't support else statement! -->
+				<c:if test="${not aStudent.isScholarship()}" >
+					N/A
+				</c:if>
+			</td>
 		</tr>
 		</c:forEach>
 	</table>
