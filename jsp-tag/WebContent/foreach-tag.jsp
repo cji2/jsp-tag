@@ -4,6 +4,7 @@
 <% 
 	// set up sample data.
 	String[] cities = {"Seoul", "London", "New York", "Washington DC", "Paris"};
+
 	pageContext.setAttribute("myCities", cities);
 %>
 <html>
